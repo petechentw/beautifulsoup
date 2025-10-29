@@ -28,3 +28,7 @@ bs4/element.py/803
 ```
 python3 -m pytest bs4/tests/test_replacer.py -v
 ```
+
+```
+python3 -m apps.m2.task6 apps/m2/test.html
+```
