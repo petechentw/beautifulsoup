@@ -23,7 +23,7 @@ def main():
     soup = BeautifulSoup(open(filename), "html.parser",replacer=b_to_blockquote)
 
 
-    with open("task6.txt", "w", encoding="utf-8") as f:
+    with open("task6.html", "w", encoding="utf-8") as f:
         f.write(soup.prettify())
 
     print(soup.prettify())
