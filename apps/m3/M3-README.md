@@ -20,10 +20,17 @@ xformer(tag)
 ```
 
 
+### Test
 ```
-python3 -m bs4.tests.test_milestone3
+cd bs4/tests 
 ```
 
+```
+python3 -m pytest -q test_milestone3.py
+```
+
+
+-----------------------------------
 ```
 python3 -m apps.m3.task7 apps/m3/input.html
 ```
