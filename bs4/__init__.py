@@ -491,6 +491,18 @@ class BeautifulSoup(Tag):
         self.markup = None
         self.builder.soup = None
 
+    def __iter__(self):
+    
+        def generator():
+            # return root at first
+            yield self
+            # then iterate all the nodes.
+            # generator → DFS → streaming
+            for node in self.descendants:
+                yield node
+        return generator()
+
+
     def copy_self(self) -> "BeautifulSoup":
         """Create a new BeautifulSoup object with the same TreeBuilder,
         but not associated with any markup.
@@ -996,6 +1008,7 @@ class BeautifulSoup(Tag):
         sourcepos: Optional[int] = None,
         namespaces: Optional[Dict[str, str]] = None,
     ) -> Optional[Tag]:
+        print(">>> USING BS4 handle_starttag", name)
         """Called by the tree builder when a new tag is encountered.
 
         :param name: Name of the tag.
@@ -1044,6 +1057,8 @@ class BeautifulSoup(Tag):
             sourcepos=sourcepos,
             namespaces=namespaces,
         )
+        if self.replacer is not None:
+            self.replacer.replace(tag)
         if tag is None:
             return tag
         if self._most_recent_element is not None:

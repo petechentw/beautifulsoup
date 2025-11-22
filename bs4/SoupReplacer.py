@@ -9,19 +9,21 @@ class SoupReplacer:
 
     def replace(self, tag):
         
-        if self.og_tag and self.alt_tag and tag.name == self.og_tag:
-            tag.name = self.alt_tag
+        if self.og_tag is not None and self.alt_tag is not None:
+            if tag.name == self.og_tag:
+                tag.name = self.alt_tag
+
         
     
         if self.name_xformer:
-            change_name = self.name_xformer(tag)
-            if change_name:
-                tag.name = change_name
+            new_name = self.name_xformer(tag)
+            if new_name is not None:
+                tag.name = new_name
 
         if self.attrs_xformer:
-            change_attrs = self.attrs_xformer(tag)
-            if change_attrs:
-                tag.attrs = change_attrs
+            new_attrs = self.attrs_xformer(tag)
+            if new_attrs is not None:
+                tag.attrs = new_attrs
             
         if self.xformer:
             self.xformer(tag)
