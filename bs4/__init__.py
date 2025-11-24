@@ -1008,7 +1008,7 @@ class BeautifulSoup(Tag):
         sourcepos: Optional[int] = None,
         namespaces: Optional[Dict[str, str]] = None,
     ) -> Optional[Tag]:
-        print(">>> USING BS4 handle_starttag", name)
+        
         """Called by the tree builder when a new tag is encountered.
 
         :param name: Name of the tag.
@@ -1057,8 +1057,7 @@ class BeautifulSoup(Tag):
             sourcepos=sourcepos,
             namespaces=namespaces,
         )
-        if self.replacer is not None:
-            self.replacer.replace(tag)
+        
         if tag is None:
             return tag
         if self._most_recent_element is not None:
