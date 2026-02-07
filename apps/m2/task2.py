@@ -6,9 +6,13 @@ import os
 
 start_time = time.time()
 
+
+
+
 filename = sys.argv[1]
 ext = os.path.splitext(filename)[1].lower() 
-only_a_tags = SoupStrainer("a")
+only_a_tags = SoupStrainer("b") #only pare the tag i need.
+# therefore, it does not have to build the whole tree. 
 
 if ext == ".html":
     parser = "html.parser"
@@ -16,7 +20,5 @@ else:
     parser = "lxml"
 
 soup = BeautifulSoup(open(filename),parser,parse_only=only_a_tags)
-with open("task1.txt","w") as file:
-    file.write(soup.prettify())
-
+print(filename + "--- %s seconds ---" % (time.time() - start_time))
 print(soup.prettify)

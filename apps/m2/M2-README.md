@@ -24,4 +24,16 @@ find_next_sibling()
 
 bs4/element.py/803
 
+``` python3 -m apps.m2.task2 apps/m2/test.html ```
+``` python3 -m apps.m2.task3 apps/m2/test.html ```
+``` python3 -m apps.m2.task4 apps/m2/test.html ```
+``` python3 -m apps.m2.task6 apps/m2/test.html ```
+
+
+``` python3 -m pytest -q bs4/tests/test_replacer.py ```
+
+
+
+
+``` handle_starttag() ``` in htmlparser uses to create tag object.
 

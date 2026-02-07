@@ -42,9 +42,9 @@ def test_attrs_xformer():
 
 
 
-# xformer (side effect)
+# xformer 
 
-def test_xformer_side_effect():
+def test_xformer():
     def add_id(tag):
         if tag.name == "p":
             tag.attrs["id"] = "newid"
@@ -74,7 +74,7 @@ def test_no_transformers():
 def test_combined_name_and_attrs():
     html = "<b>Mix</b>"
     replacer = SoupReplacer(
-        name_xformer=lambda tag: "strong" if tag.name == "b" else tag.name,
+        name_xformer=lambda tag: "strong" if tag.name == "b" else "",
         attrs_xformer=lambda tag: {"style": "color:red;"} 
         if tag.name in ["b", "strong"] else tag.attrs,
     )

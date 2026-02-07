@@ -17,8 +17,7 @@ else:
 
 
 soup = BeautifulSoup(open(filename),parser,parse_only=only_id_tag)
-with open("task1.txt","w") as file:
-    file.write(soup.prettify())
+
 
 
 print(soup.prettify)

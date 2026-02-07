@@ -13,8 +13,6 @@ class SoupReplacer:
             if tag.name == self.og_tag:
                 tag.name = self.alt_tag
 
-        
-    
         if self.name_xformer:
             new_name = self.name_xformer(tag)
             if new_name is not None:

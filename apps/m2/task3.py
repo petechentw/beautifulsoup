@@ -8,15 +8,13 @@ only_tag = SoupStrainer(True)
 
 filename = sys.argv[1]
 ext = os.path.splitext(filename)[1].lower() 
-
 if ext == ".html":
     parser = "html.parser"
 else:
     parser = "lxml"
 
 soup = BeautifulSoup(open(filename),parser,parse_only=only_tag)
-with open("task1.txt","w") as file:
-    file.write(soup.prettify())
+
 
 
 

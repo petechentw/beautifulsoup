@@ -5,7 +5,6 @@ import sys
 
 
 def add_class_attr(tag):
-   
     if tag.name == "p":
         tag.attrs["class"] = "test"
 
