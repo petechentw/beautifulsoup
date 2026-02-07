@@ -1,3 +1,8 @@
+An experimental extension of BeautifulSoup exploring multi-paradigm APIs and parsing-time optimizations
+
+
+
+
 1. Multi-Paradigm API Extensions
 Motivation
 
